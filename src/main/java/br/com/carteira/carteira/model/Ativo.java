@@ -43,4 +43,8 @@ public class Ativo {
     @CreationTimestamp
     @Column(updatable = false)
     private LocalDateTime criadoEm;
+
+    @ManyToOne
+    @JoinColumn(name = "usuario_id")
+    private Usuario usuario;
 }
