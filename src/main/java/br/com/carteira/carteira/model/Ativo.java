@@ -31,13 +31,13 @@ public class Ativo {
 
     private BigDecimal totalInvestido;
 
-    @OneToMany(mappedBy = "ativo", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "ativo", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Cotacao> cotacoes = new ArrayList<>();
 
-    @OneToMany(mappedBy = "ativo", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "ativo", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Dividendo> dividendos = new ArrayList<>();
 
-    @OneToMany(mappedBy = "ativo", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "ativo", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Operacao> operacoes = new ArrayList<>();
 
     @CreationTimestamp
