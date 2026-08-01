@@ -75,8 +75,4 @@ public class RelatorioService {
         return new RelatorioMensalDTO(mesAnoFormatado, ativosDTO, totalInvestido, totalAtual, lucroPrejuizo, valorTotalDividendos, dividendosPorAtivo );
     }
 
-    public RelatorioMensalDTO gerarRelatorioAtual() {
-        LocalDate hoje = LocalDate.now();
-        return gerarRelatorioMes(hoje.getMonthValue(), hoje.getYear());
-    }
 }
