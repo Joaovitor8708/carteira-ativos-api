@@ -8,6 +8,7 @@ import br.com.carteira.carteira.model.Ativo;
 import br.com.carteira.carteira.model.Cotacao;
 import br.com.carteira.carteira.repositories.AtivoRepository;
 import br.com.carteira.carteira.repositories.CotacaoRepository;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -67,6 +68,7 @@ public class CotacaoService {
         }
     }
 
+    @Scheduled(cron = "0 0/30 10-17 * * MON-FRI")
     public void atualizarTodos(){
         List<Ativo> ativos = ativoRepository.findAll();
 
